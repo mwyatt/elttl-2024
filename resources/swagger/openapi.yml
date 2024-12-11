@@ -1,0 +1,35 @@
+openapi: 3.0.3
+info:
+  title: East Lancashire Table Tennis League
+  description: Table tennis league website
+  version: 0.0.0
+  contact:
+    name: Martin Wyatt
+    email: martin.wyatt@gmail.com
+servers:
+  - url: http://localhost/api
+    description: Dev
+paths:
+  /alive:
+    get:
+      summary: Check live
+      responses:
+        200:
+          description: Successfully live
+          content:
+            application/json:
+              schema:
+                type: string
+                example: hello world
+  /admin/fixture/{id}:
+    post:
+      summary: Submit a completed fixture
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                playerArrangement:
+                  type: array
+      responses:
