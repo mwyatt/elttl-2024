@@ -11,6 +11,7 @@ class Page
         private string          $title,
         private string          $html,
         private ContentTypeEnum $type,
+        private User            $user,
         private ?string         $slug = null,
     )
     {

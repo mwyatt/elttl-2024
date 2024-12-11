@@ -2,13 +2,13 @@
 
 namespace App\Infrastructure\Persistence\Eloquent;
 
-use App\Models\Content;
+use App\Models\ContentModel;
 
 class ContentRepository
 {
-    public function getOne(int $id): Content
+    public function getOne(int $id): ContentModel
     {
-        return new Content();
-        Content::query()->findOrFail($id);
+        return new ContentModel();
+        ContentModel::query()->findOrFail($id);
     }
 }

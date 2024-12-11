@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\Content;
+use App\Models\ContentModel;
 use Illuminate\Database\Seeder;
 
 class ContentSeeder extends Seeder
@@ -12,8 +12,8 @@ class ContentSeeder extends Seeder
      */
     public function run(): void
     {
-        Content::factory()->createMany(30)->map(
-            fn(Content $content) => $content->metas()->createMany([
+        ContentModel::factory()->createMany(30)->map(
+            fn(ContentModel $content) => $content->metas()->createMany([
                 ['name' => 'description', 'value' => 'This is a description'],
                 ['name' => 'keywords', 'value' => 'This, is, a, keyword'],
             ])

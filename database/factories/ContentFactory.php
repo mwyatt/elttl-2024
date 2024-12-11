@@ -6,7 +6,7 @@ use App\Common\Enum\ContentTypeEnum;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Content>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\ContentModel>
  */
 class ContentFactory extends Factory
 {

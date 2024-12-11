@@ -7,29 +7,34 @@ info:
     name: Martin Wyatt
     email: martin.wyatt@gmail.com
 servers:
-  - url: http://localhost/api
+  - url: http://localhost
     description: Dev
 paths:
-  /alive:
+  /:
     get:
-      summary: Check live
+      summary: Homepage
+      tags:
+        - Frontend
       responses:
         200:
-          description: Successfully live
+          description: Homepage loads
           content:
-            application/json:
+            text/html:
               schema:
                 type: string
-                example: hello world
-  /admin/fixture/{id}:
-    post:
-      summary: Submit a completed fixture
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                playerArrangement:
-                  type: array
-      responses:
+#  /api/admin/fixture/{id}:
+#    post:
+#      summary: Submit a completed fixture
+#      tags:
+#        - API
+#      requestBody:
+#        content:
+#          application/json:
+#            schema:
+#              type: object
+#              properties:
+#                playerArrangement:
+#                  type: array
+#      responses:
+#        200:
+#

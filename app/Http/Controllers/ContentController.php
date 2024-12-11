@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreContentRequest;
 use App\Http\Requests\UpdateContentRequest;
-use App\Models\Content;
+use App\Models\ContentModel;
 
 class ContentController extends Controller
 {
@@ -35,7 +35,7 @@ class ContentController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Content $content)
+    public function show(ContentModel $content)
     {
         //
     }
@@ -43,7 +43,7 @@ class ContentController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Content $content)
+    public function edit(ContentModel $content)
     {
         //
     }
@@ -51,7 +51,7 @@ class ContentController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateContentRequest $request, Content $content)
+    public function update(UpdateContentRequest $request, ContentModel $content)
     {
         //
     }
@@ -59,7 +59,7 @@ class ContentController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Content $content)
+    public function destroy(ContentModel $content)
     {
         //
     }
