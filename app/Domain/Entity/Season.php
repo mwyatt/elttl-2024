@@ -1,13 +1,21 @@
 <?php
 
-namespace App\Domain\ValueObject;
+namespace App\Domain\Entity;
 
 class Season
 {
     public function __construct(
-        private int $year,
+        private int     $id,
+        private int     $year,
         private ?string $staticLegacyBackup = null,
-    ) {}
+    )
+    {
+    }
+
+    public function getId(): int
+    {
+        return $this->id;
+    }
 
     public function getYear(): int
     {

@@ -5,7 +5,7 @@ namespace App\Infrastructure\Persistence\Eloquent;
 use App\Infrastructure\Persistence\Eloquent\Converters\ContentConverter;
 use App\Models\ContentModel;
 
-class PageRepository extends ContentRepository
+class PageRepository extends PressRepository
 {
     public function getOne(int $id): ContentModel
     {

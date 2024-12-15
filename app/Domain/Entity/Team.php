@@ -2,7 +2,6 @@
 
 namespace App\Domain\Entity;
 
-use App\Domain\ValueObject\Season;
 use Illuminate\Support\Collection;
 
 class Team

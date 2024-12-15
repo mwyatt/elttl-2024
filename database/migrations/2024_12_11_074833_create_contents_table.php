@@ -15,8 +15,8 @@ return new class extends Migration {
             $table->id();
             $table->foreignId('user_id')->constrained('users');
             $table->string('title');
-            $table->string('slug');
-            $table->text('html');
+            $table->string('slug')->nullable();
+            $table->text('html')->nullable();
             $table->tinyInteger('type');
             $table->tinyInteger('status')->default(ContentStatusEnum::DRAFT);
             $table->timestamps();

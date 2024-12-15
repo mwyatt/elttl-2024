@@ -9,12 +9,17 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class ContentModel extends Model
 {
-    /** @use HasFactory<\Database\Factories\ContentFactory> */
+    /** @use HasFactory<\Database\Factories\ContentModelFactory> */
     use HasFactory;
+
+    protected $table = 'contents';
 
     public function metas(): HasMany
     {
-        return $this->hasMany(ContentMetaModel::class);
+        return $this->hasMany(
+            ContentMetaModel::class,
+            'content_id'
+        );
     }
 
     public function user(): BelongsTo

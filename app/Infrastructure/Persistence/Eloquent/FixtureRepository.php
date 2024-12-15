@@ -7,8 +7,8 @@ use App\Domain\Entity\Encounter;
 use App\Domain\Entity\Fixture;
 use App\Domain\Entity\Location;
 use App\Domain\Entity\Player;
+use App\Domain\Entity\Season;
 use App\Domain\Entity\Team;
-use App\Domain\ValueObject\Season;
 use Illuminate\Support\Collection;
 
 class FixtureRepository

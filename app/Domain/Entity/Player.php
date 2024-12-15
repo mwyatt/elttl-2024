@@ -3,25 +3,26 @@
 namespace App\Domain\Entity;
 
 use App\Domain\ValueObject\Detail;
-use App\Domain\ValueObject\Season;
 use Illuminate\Support\Collection;
 
 class Player
 {
     /**
-     * @param  Collection<int, Detail>  $details
-     * @param  Collection<int, Team>  $teams
+     * @param Collection<int, Detail> $details
+     * @param Collection<int, Team> $teams
      */
     public function __construct(
-        private Season $season,
-        private string $nameFirst,
+        private Season     $season,
+        private string     $nameFirst,
         private Collection $details,
-        private int $rank,
-        private int $licenseNumber,
+        private int        $rank,
+        private int        $licenseNumber,
         private Collection $teams,
-        private ?string $nameLast = null,
-        private ?string $slug = null,
-    ) {}
+        private ?string    $nameLast = null,
+        private ?string    $slug = null,
+    )
+    {
+    }
 
     public function getSeason(): Season
     {
