@@ -2,12 +2,13 @@
 
 namespace App\Domain\Entity;
 
-class Season
+use Illuminate\Contracts\Support\Arrayable;
+
+class Season implements Arrayable
 {
     public function __construct(
-        private int     $id,
-        private int     $year,
-        private ?string $staticLegacyBackup = null,
+        private int $id,
+        private int $year,
     )
     {
     }
@@ -22,8 +23,11 @@ class Season
         return $this->year;
     }
 
-    public function getStaticLegacyBackup(): ?string
+    public function toArray(): array
     {
-        return $this->staticLegacyBackup;
+        return [
+            'id' => $this->id,
+            'year' => $this->year,
+        ];
     }
 }

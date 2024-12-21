@@ -27,13 +27,11 @@ class PressRepository
      */
     public function getLatest(int $count = 5): Collection
     {
-        return new Collection(
-            ContentModel::query()
-                ->where('type', ContentTypeEnum::PRESS)
-                ->orderBy('created_at', 'desc')
-                ->limit($count)
-                ->get()
-                ->each(fn($model) => $this->contentConverter->convertToPress($model))
-        );
+        return ContentModel::query()
+            ->where('type', ContentTypeEnum::PRESS)
+            ->orderBy('created_at', 'desc')
+            ->limit($count)
+            ->get()
+            ->map(fn($model) => $this->contentConverter->convertToPress($model));
     }
 }

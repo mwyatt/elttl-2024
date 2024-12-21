@@ -3,14 +3,14 @@
 namespace App\Policies;
 
 use App\Models\ContentModel;
-use App\Models\UserModel;
+use App\Models\User;
 
 class ContentPolicy
 {
     /**
      * Determine whether the user can view any models.
      */
-    public function viewAny(UserModel $user): bool
+    public function viewAny(User $user): bool
     {
         return false;
     }
@@ -18,7 +18,7 @@ class ContentPolicy
     /**
      * Determine whether the user can view the model.
      */
-    public function view(UserModel $user, ContentModel $content): bool
+    public function view(User $user, ContentModel $content): bool
     {
         return false;
     }
@@ -26,7 +26,7 @@ class ContentPolicy
     /**
      * Determine whether the user can create models.
      */
-    public function create(UserModel $user): bool
+    public function create(User $user): bool
     {
         return false;
     }
@@ -34,7 +34,7 @@ class ContentPolicy
     /**
      * Determine whether the user can update the model.
      */
-    public function update(UserModel $user, ContentModel $content): bool
+    public function update(User $user, ContentModel $content): bool
     {
         return false;
     }
@@ -42,7 +42,7 @@ class ContentPolicy
     /**
      * Determine whether the user can delete the model.
      */
-    public function delete(UserModel $user, ContentModel $content): bool
+    public function delete(User $user, ContentModel $content): bool
     {
         return false;
     }
@@ -50,7 +50,7 @@ class ContentPolicy
     /**
      * Determine whether the user can restore the model.
      */
-    public function restore(UserModel $user, ContentModel $content): bool
+    public function restore(User $user, ContentModel $content): bool
     {
         return false;
     }
@@ -58,7 +58,7 @@ class ContentPolicy
     /**
      * Determine whether the user can permanently delete the model.
      */
-    public function forceDelete(UserModel $user, ContentModel $content): bool
+    public function forceDelete(User $user, ContentModel $content): bool
     {
         return false;
     }

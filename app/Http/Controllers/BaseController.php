@@ -20,7 +20,7 @@ class BaseController extends Controller
     public function index(): Response
     {
         return Inertia::render('Homepage', [
-            'advertisementsPrimary' => $this->advertisementRepository->getViewGroup('home-primary'),
+            'advertisementsPrimary' => $this->advertisementRepository->getViewGroup('home-primary', 1),
             'latestPress' => $this->pressRepository->getLatest(),
         ]);
     }

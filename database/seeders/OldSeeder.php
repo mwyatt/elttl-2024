@@ -111,8 +111,7 @@ class OldSeeder extends Seeder
         $rows->each(function ($row) {
             DB::connection('mysql')->table('users')->insert([
                 'id' => $row->id,
-                'name_first' => $row->nameFirst,
-                'name_last' => $row->nameLast,
+                'name' => implode(' ', [$row->nameFirst, $row->nameLast]),
                 'email' => $row->email,
                 'password' => $row->password,
                 'created_at' => Carbon::createFromTimestamp($row->timeRegistered),

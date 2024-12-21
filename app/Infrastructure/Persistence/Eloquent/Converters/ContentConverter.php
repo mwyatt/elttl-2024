@@ -27,6 +27,7 @@ class ContentConverter
             $model->id,
             $model->title,
             ContentTypeEnum::from($model->type),
+            $model->created_at,
             $model->slug,
         );
     }
@@ -36,9 +37,9 @@ class ContentConverter
         return new Advertisement(
             $model->id,
             $model->title,
-            $model->metas()->where('name', 'description')->first(),
-            $model->metas()->where('name', 'url')->first(),
-            $model->metas()->where('name', 'action')->first(),
+            $model->metas()->where('name', 'description')->first()->value,
+            $model->metas()->where('name', 'url')->first()->value,
+            $model->metas()->where('name', 'action')->first()->value,
             $model->slug,
         );
     }

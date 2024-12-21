@@ -2,11 +2,14 @@
 
 namespace App\Domain\Entity;
 
-class Location
+use Illuminate\Contracts\Support\Arrayable;
+
+class Location implements Arrayable
 {
     public function __construct(
+        private int     $id,
         private string  $name,
-        private string  $location, // lookup address? gmaps position?
+        private ?string $location,
         private ?Season $season = null,
         private ?string $slug = null,
     )
@@ -31,5 +34,16 @@ class Location
     public function getSlug(): ?string
     {
         return $this->slug;
+    }
+
+    public function toArray(): array
+    {
+        return [
+            'id' => $this->id,
+            'name' => $this->name,
+            'location' => $this->location,
+            'season' => $this->season?->toArray(),
+            'slug' => $this->slug,
+        ];
     }
 }

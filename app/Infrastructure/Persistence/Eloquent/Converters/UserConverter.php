@@ -2,12 +2,12 @@
 
 namespace App\Infrastructure\Persistence\Eloquent\Converters;
 
-use App\Domain\Entity\Page;
-use App\Models\UserModel;
+use App\Domain\Entity\User;
+use App\Models\User as UserModel;
 
 class UserConverter
 {
-    public function convert(UserModel $model): Page
+    public function convert(UserModel $model): User
     {
         return new User(
             $model->id,

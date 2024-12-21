@@ -2,7 +2,9 @@
 
 namespace App\Domain\Entity;
 
-class Advertisement
+use Illuminate\Contracts\Support\Arrayable;
+
+class Advertisement implements Arrayable
 {
     public function __construct(
         private int     $id,
@@ -13,5 +15,17 @@ class Advertisement
         private ?string $slug,
     )
     {
+    }
+
+    public function toArray(): array
+    {
+        return [
+            'id' => $this->id,
+            'title' => $this->title,
+            'description' => $this->description,
+            'url' => $this->url,
+            'action' => $this->action,
+            'slug' => $this->slug,
+        ];
     }
 }
